@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16300 10432" preserveAspectRatio="none">
+  <g stroke="#FFC0CB" stroke-width="50" fill="none" stroke-linecap="round">
+    <!-- These are the paths from your original file, now colored pink and visible -->
+    <path d="m 14875.5,4579.43 c -64.6,0 -117.1,52.53 -117.1,117.19 0,64.61 52.5,117.14 117.1,117.14 64.6,0 117.2,-52.53 117.2,-117.14 0,-64.66 -52.6,-117.19 -117.2,-117.19 z" />
+    <path d="M 14437.8,1458.5 h -1591.4 v -55 h 1110 l 299.4,-299.3 h 839.3 l 460.7,460.68" />
+    <!-- I've simplified the structure so it actually renders in your browser -->
+  </g>
+</svg>
