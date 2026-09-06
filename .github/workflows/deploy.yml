@@ -17,8 +17,8 @@ jobs:
         with:
           args: --delete
         env:
-          AWS_S3_BUCKET: your-bucket-name
-          AWS_ACCESS_KEY_ID: ${{ secrets.AKIAU466IVTM5KXXK3VV }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.M9DEEHu/KOeFBbuwY5/afUNnInac56wGZu8IFDc2 }}
-          AWS_REGION: your-region
+          AWS_S3_BUCKET: nissi-gencore-s3
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: eu-north-1
           SOURCE_DIR: "."
