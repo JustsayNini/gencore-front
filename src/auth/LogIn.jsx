@@ -3,7 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext.jsx";
 import '../App.css';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 const LogIn = ({ setIsLoggedIn }) => {
+    
+
     const [logInData, setLogInData] = useState({
         userEmail: '',
         userPassword: ''
@@ -20,7 +24,7 @@ const LogIn = ({ setIsLoggedIn }) => {
         event.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3000/usersession', {
+            const response = await fetch(`${API_URL}/usersession`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

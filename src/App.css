@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-
-.AppDiv{
+.AppDiv {
   background-color: rgb(251, 229, 229);
   width: 100%;
   height: 100vh;
@@ -17,9 +16,8 @@
   align-items: center;
 }
 
-
-.LogoDiv{
-  border: .5px solid rgb(255, 91, 91);
+.LogoDiv {
+  border: 0.5px solid rgb(255, 91, 91);
   border-radius: 2vw;
   box-shadow: 0 0 2vw rgb(251, 149, 149);
   width: 45%;
@@ -28,134 +26,270 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
-.LogoDiv .actualWords{
-  
+.LogoDiv .actualWords {
   width: fit-content;
   height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  font-family: 'Oswald', sans-serif;
 }
 
-.LogoDiv .actualWords{
-  font-family: 'Oswald';
-}
-
-.LogoDiv .actualWords h1{
+.LogoDiv .actualWords h1 {
   color: rgb(255, 129, 129);
   font-size: 6rem;
   font-weight: 450; 
 }
 
-.LogoDiv .actualWords p{
+.LogoDiv .actualWords p {
   font-size: 2rem;
 }
 
-
-
-.accessOptions{
+.accessOptions {
   border: 1px solid rgb(226, 144, 144);
   border-radius: 2vw;
   background-color: rgba(252, 252, 252, 0.363);
-  height:80%;
+  height: 80%;
   width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  gap:20px;
+  gap: 20px;
 }
 
-.buttons{
+.buttons {
   width: 80%;
   height: auto;
   display: flex;
   flex-direction: column;
-  gap:15px;
+  gap: 15px;
   justify-content: space-around;
   align-items: center;
 }
 
-.accessButton{
+.accessButton {
   border: 1px solid rgb(226, 144, 144);
   border-radius: 2vw;
   width: 100%;
   text-align: center;
   padding: 2vh 2vw;
-  font-family:'Play';
+  font-family: 'Play', sans-serif;
   text-decoration: none;
   color: rgb(194, 79, 79);
   font-size: 1.2rem;
-
 }
 
-.log-in-button{
+.log-in-button {
   background-color: rgb(255, 208, 208);
 }
 
-.sign-up-button{
+.sign-up-button {
   background-color: rgb(255, 156, 156);
 }
 
-.login-container, .signup-container{
-  
+.login-container, .signup-container {
   border-radius: 2vw;
   background-color: rgba(255, 218, 218, 0.786);
   width: 80%;
-  height: auto;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  font-family: 'Play';
+  font-family: 'Play', sans-serif;
 }
 
-.login-container h2{
+.login-container h2, .signup-container h2 {
   font-size: 2rem;
   color: rgb(194, 79, 79);
 }
 
-.signup-container h2{
-  font-size: 2rem;  
-  color: rgb(194, 79, 79);
-}
-
-.form-container{
+.form-container {
   border-radius: 2vw;
   background-color: rgb(249, 240, 240);
   width: 80%;
-  height: 70%;
+  padding: 15px;
   margin: 2vh 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-
+  gap: 10px;
 }
 
-input{
+input, textarea {
   appearance: none;
   background-color: pink;
   padding: 1vh 1vw;
   border: 1px solid rgb(255, 138, 138);
-  border-radius: 2vw;
-  margin: 1vh 1vw
+  border-radius: 1vw;
+  margin: 1vh 1vw;
+  font-family: 'Play', sans-serif;
+  width: 90%;
 }
 
-.form-container button{
+.form-container button, button {
   appearance: none;
   padding: 1vh 1vw;
   border: 1px solid rgb(255, 166, 166);
   background-color: rgb(255, 194, 194);
   color: rgb(194, 79, 79);
-  transition: transform 0.3s ease;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  border-radius: 1vw;
+  cursor: pointer;
 }
 
-.form-container button:hover{
+.form-container button:hover, button:hover {
+  background-color: rgb(255, 170, 170);
+}
+
+.dashboardNav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  padding: 1vh 1vw;
+  background-color: rgb(255, 218, 218);
+  border: 1px solid rgb(255, 166, 166);
+  border-radius: 2vw;
+  font-family: 'Play', sans-serif;
+}
+
+.navLink {
+  text-decoration: none;
+  color: rgb(194, 79, 79);
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 0.5vh 0.8vw;
+  border-radius: 1vw;
+}
+
+.navLink:hover {
+  background-color: rgb(255, 180, 180);
+  color: rgb(150, 40, 40);
+}
+
+.mainContent {
+  width: 90%;
+  height: 80%;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HomeDiv, .HelpContainer, .CartDiv, .CheckoutDiv {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 15px;
+  font-family: 'Play', sans-serif;
+}
+
+.pageTitle {
+  color: rgb(194, 79, 79);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.SearchSpaceContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.searchBarWrapper {
+  flex-shrink: 0; 
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.searchContentArea {
+  flex-grow: 1;
+  overflow-y: auto; 
+  padding-right: 5px;
+}
+
+.product-grid {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.product-card, .supportCard, .cartBox, .checkoutBox {
+  border: 1px solid rgb(255, 166, 166);
+  background-color: rgba(255, 235, 235, 0.6);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 1vw;
+  font-family: 'Play', sans-serif;
+}
+
+.product-card {
   cursor: pointer;
-  transform: scale(1.2);
+  min-width: 200px;
+}
+
+.product-card:hover {
+  background-color: rgb(255, 220, 220);
+}
+
+.product-detail-card {
+  border: 1px solid rgb(226, 144, 144);
+  background-color: rgb(250, 240, 240);
+  padding: 15px;
+  border-radius: 1.5vw;
+  font-family: 'Play', sans-serif;
+}
+
+.specs-box {
+  background: #fff;
+  padding: 10px;
+  border-radius: 1vw;
+  margin: 10px 0;
+  border: 1px solid rgb(255, 200, 200);
+}
+
+.addToCartBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.faqItem {
+  border-bottom: 1px solid rgb(255, 200, 200);
+  padding: 8px 0;
+}
+
+.faqQuestion {
+  cursor: pointer;
+  font-weight: bold;
+  color: rgb(194, 79, 79);
+  display: flex;
+  justify-content: space-between;
+}
+
+.faqAnswer {
+  margin-top: 5px;
+  font-size: 0.85rem;
+  color: #444;
+  background: #fff;
+  padding: 8px;
+  border-radius: 0.5vw;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.successMessage {
+  color: green;
 }

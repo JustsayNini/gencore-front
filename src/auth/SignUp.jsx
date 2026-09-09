@@ -1,6 +1,9 @@
 import { useState , useEffect } from "react";
 import '../App.css';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
+
 const SignUp = () => {
 
     const [signUpData, setSignUpData] = useState({
@@ -32,9 +35,10 @@ const SignUp = () => {
                 message: 'Please fill in all fields',
                 type: 'error'
             })
+            return;
         }
         try{
-                const response = await fetch('http://localhost:3000/userinformation', {
+                const response = await fetch(`${API_URL}/userinformation`, {
                 method: 'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -76,23 +80,23 @@ const SignUp = () => {
             <h2>SIGN-UP</h2>
 
             <form className="form-container">
-                <label for="userEmail" >Email: 
+                <label htmlFor="userEmail" >Email: 
                     <input type="email" name="userEmail" id="userEmail" value={signUpData.userEmail} onChange={handleChange}/>
                 </label>
                 
-                <label for="userFirstName">Name:
+                <label htmlFor="userFirstName">Name:
                     <input type="text" name="userFirstName" id="userFirstName" value={signUpData.userFirstName} onChange={handleChange}/> 
                 </label>
                 
-                <label for="userSurname">Surname: 
-                    <input type="text" name="userSurname" for="userSurname" value={signUpData.userSurname} onChange={handleChange}/>
+                <label htmlFor="userSurname">Surname: 
+                    <input type="text" name="userSurname" id="userSurname" value={signUpData.userSurname} onChange={handleChange}/>
                 </label>
                 
-                <label for="userUsername">New Username: 
+                <label htmlFor="userUsername">New Username: 
                     <input type="text" name="userUsername" id="userUsername" value={signUpData.userUsername} onChange={handleChange}/>
                 </label>
                 
-                <label for="userPassword">Create Password: 
+                <label htmlFor="userPassword">Create Password: 
                     <input type="password" name="userPassword" id="userPassword" value={signUpData.userPassword} onChange={handleChange}/>
                 </label>
 
