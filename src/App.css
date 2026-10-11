@@ -8,12 +8,20 @@
 }
 
 .AppDiv {
+  position: relative;
   background-color: rgb(251, 229, 229);
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  overflow: hidden;
+}
+
+.LogoDiv, .actualWords {
+  position: relative;
+  z-index: 2; 
+  background-color: rgb(251, 229, 229);
 }
 
 .LogoDiv {
@@ -51,23 +59,57 @@
 .accessOptions {
   border: 1px solid rgb(226, 144, 144);
   border-radius: 2vw;
-  background-color: rgba(252, 252, 252, 0.363);
+  background-color: rgb(252, 252, 252);
   height: 80%;
   width: 45%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  z-index:2;
+  
+}
+
+.welcome-container{ 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  gap: 15px;
+}
+
+.intro-message{ 
+  text-align: center;
+  font-family: 'Play', sans-serif;
+  color: rgb(194, 79, 79);
+  padding: 0 20px 
+}
+
+.intro-message h3 { 
+  font-size: 1.5rem;
+  margin-bottom: 8px 
+}
+
+.intro-message p{
+  font-size: 1rem;
+}
+
+.horizontal-line {
+  border: none;
+  height: 1.5px;
+  width: 80%;
+  margin: 20px auto;
+  background: linear-gradient(90deg, rgba(255, 129, 129, 0), rgb(255, 129, 129) 50%, rgba(255, 129, 129, 0));
+  box-shadow: 0 0 8px rgb(255, 129, 129), 0 0 15px rgba(255, 156, 156, 0.6);
 }
 
 .buttons {
   width: 60%;
-  height: auto;
-  /* margin-top: 40px; */
+  height: 25%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
   justify-content: space-evenly;
   align-items: center;
 }

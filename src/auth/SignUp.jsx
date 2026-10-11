@@ -1,11 +1,10 @@
-import { useState , useEffect } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 import '../App.css';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
-
-const SignUp = () => {
-
+const SignUp = ({ setIsLoggedIn }) => {
     const [signUpData, setSignUpData] = useState({
         userEmail:'',
         userFirstName:'',
@@ -19,7 +18,7 @@ const SignUp = () => {
         type: ''
     })
 
-    const [isRegistered, setIsRegistered]=useState(false)
+    const navigate = useNavigate(); 
 
     const handleSignUp = async (event) => {
         event.preventDefault()
@@ -37,13 +36,14 @@ const SignUp = () => {
             })
             return;
         }
-        try{
-                const response = await fetch(`${API_URL}/userinformation`, {
+
+        try {
+            const response = await fetch(`${API_URL}/userinformation`, {
                 method: 'POST',
                 headers:{
                     'Content-Type':'application/json'
                 },
-                body:JSON.stringify(signUpData)
+                body: JSON.stringify(signUpData)
             })
 
             const data = await response.json()
@@ -55,20 +55,26 @@ const SignUp = () => {
                 })
             } else {
                 setMessage({
-                    message:'Account created successfully!',
+                    message:'Account created successfully! Logging you in...',
                     type:'success'
                 })
-                setIsRegistered(true)
-            }
 
-            console.log(data)
-            }catch(error){
-                console.error("Connection failed: ", error)
-                setMessage({
-                    message:"Sign Up failed. Please try again.",
-                    type:'error'
-                })
+                // Save user data & update global auth state
+                localStorage.setItem("user", JSON.stringify(data.user));
+                setIsLoggedIn(true);
+
+                // Instantly navigate to home/dashboard
+                setTimeout(() => {
+                    navigate('/home');
+                }, 1000);
             }
+        } catch(error) {
+            console.error("Connection failed: ", error)
+            setMessage({
+                message:"Sign Up failed. Please try again.",
+                type:'error'
+            })
+        }
     }
 
     const handleChange = (event) => {
@@ -78,8 +84,7 @@ const SignUp = () => {
     return (
         <div className="signup-container">
             <h2>SIGN-UP</h2>
-
-            <form className="form-container">
+            <form className="form-container" onSubmit={handleSignUp}>
                 <label htmlFor="userEmail" >Email: 
                     <input type="email" name="userEmail" id="userEmail" value={signUpData.userEmail} onChange={handleChange}/>
                 </label>
@@ -100,12 +105,9 @@ const SignUp = () => {
                     <input type="password" name="userPassword" id="userPassword" value={signUpData.userPassword} onChange={handleChange}/>
                 </label>
 
-                <button type="button" onClick={handleSignUp}>Sign Up</button>
+                <button type="submit">Sign Up</button>
                 {message.type==='error' ? <p style={{color:'red'}}>{message.message}</p> : <p style={{color:'green'}}>{message.message}</p>}
             </form>
-
-            
-            
         </div>
     );
 }
